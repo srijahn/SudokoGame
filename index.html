@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="sudoko.css">
+</head>
+<body>
+    <h1>Sudoku Game</h1>
+
+    <div class="instructions">
+        <h2>How to Play Sudoku</h2>
+        <p>
+            Sudoku is a number puzzle game. The objective is to fill the 9x9 grid so that each row,
+            each column, and each of the nine 3x3 grids contain the digits from 1 to 9 without repeating.
+        </p>
+        <ul>
+            <li>Click on an empty cell and enter a number between 1 and 9.</li>
+            <li>Numbers cannot be repeated within a row, column, or 3x3 grid.</li>
+            <li>Use logic and deduction to fill the entire grid correctly.</li>
+            <li>Have fun and challenge yourself!</li>
+        </ul>
+    </div>
+
+    <div class="tips">
+        <h2>Tips</h2>
+        <p>
+            Use notes to indicate possible numbers in a cell. 
+            Mark the numbers in your temporary notes which are already used in that row, column or 
+            the 3x3 grid it belongs to so that you can eliminate some.
+        </p>
+        <p> Start with the easy level first 😉        </p>
+    </div>
+
+        <div class="difficulty-selection">
+            <h2>Select Difficulty Level</h2>
+            <button class="difficulty-btn" id="easy-btn">Easy</button>
+            <button class="difficulty-btn" id="medium-btn">Medium</button>
+            <button class="difficulty-btn" id="hard-btn">Hard</button>
+        </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Sudoku</title>
+    <link rel="stylesheet" href="sudoko.css">
+</head>
+<body>
+    <h1>SOLVE</h1>
+    <div class="timer">
+      <h2>Time Left: <span id="time-left">07:00</span></h2>
+    </div>
+  
+    <div class="game-container"> 
+    <div class="sudoku-container">
+      <div class="sudoku-grid">
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+      </div>
+      <div class="sudoku-grid">
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+      </div>
+      <div class="sudoku-grid">
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+          <div class="grid">
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+              <div class="cell" tabindex="0"></div>
+          </div>
+      </div>
+  </div>
+  <div class="number-selection">
+    <div class="grid">
+        <div class="number-cell" onclick="selectNumber(1)">1</div>
+        <div class="number-cell" onclick="selectNumber(2)">2</div>
+        <div class="number-cell" onclick="selectNumber(3)">3</div>
+        <div class="number-cell" onclick="selectNumber(4)">4</div>
+        <div class="number-cell" onclick="selectNumber(5)">5</div>
+        <div class="number-cell" onclick="selectNumber(6)">6</div>
+        <div class="number-cell" onclick="selectNumber(7)">7</div>
+        <div class="number-cell" onclick="selectNumber(8)">8</div>
+        <div class="number-cell" onclick="selectNumber(9)">9</div>
+    </div>
+</div>
+</div>
+
+  <script src="index.js"></script>
+  <script>
+    function displaySudokuBoard(board) {
+        const sudokuCells = document.querySelectorAll('.cell');
+        for (let row = 0; row < 9; row++) {
+            for (let col = 0; col < 9; col++) {
+                sudokuCells[row * 9 + col].textContent = board[row][col] !== 0 ? board[row][col] : '';
+            }
+        }
+    }
+
+    window.onload = function() {
+        initializeGame('medium'); 
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {
+  background-color: #f0f8ff; 
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #ff6347; 
+  font-size: 2.5em;
+}
+
+.instructions, .tips {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fafad2; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2, .tips h2 {
+  color: #4682b4; 
+}
+
+ul {
+  list-style-type: square;
+  color: #4682b4;
+}
+
+.difficulty-selection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.difficulty-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.difficulty-btn:hover {
+  background-color: #0056b3;
+}
+
+.timer {
+  text-align: center;
+  margin: 20px;
+  font-size: 1.5em;
+  color: #ff6347;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 50px); 
+  grid-template-rows: repeat(3, 50px); 
+  border: 2px solid #4682b4;
+  margin: 2px;
+}
+.sudoku-grid {
+  display: flex;
+  margin-bottom: 1px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #fffacd; 
+  border: 1px solid #87cefa; 
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box; 
+}
+
+.cell:hover {
+  background-color: #ffebcd;
+}
+.cell:nth-child(3n) {
+  border-right: 2px solid #4682b4;
+}
+.sudoku-grid:nth-child(3n) {
+  border-bottom: 2px solid #4682b4;
+}
+.game-container {
+  display: flex;  
+  justify-content: center;
+  align-items: flex-start; 
+  margin: 20px;
+}
+
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid #4682b4; 
+  width: fit-content; 
+}
+
+.number-selection {
+  margin-top: 150px;
+  margin-left: 40px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.number-cell {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #fafad2;
+  border: 2px solid #4682b4;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.number-cell:hover {
+  background-color: #ffebcd;
+}
+
+.disabled {
+  background-color: #f0f0f0; 
+  color: #888; 
+}
+
